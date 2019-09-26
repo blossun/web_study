@@ -44,22 +44,12 @@ function file_list(){
     <?php if(isset($_GET['id'])){ #id값이 있는 경우 true ?>
             <!-- <a href="update.php?id=<?php #echo $_GET['id'];?>">update</a> -->
             <a href="update.php?id=<?=$_GET['id']?>">update</a>
-            <!-- GET 방식 삭제 안 됨. -->
-            <!-- <a href="delete_process.php?id=<?=$_GET['id']?>">delete</a> -->
-            <!-- POST 방식으로 삭제할 것 -->
-            <form action="delete_process.php" method="post">
-              <input type="hidden" name="id" value="<?=$_GET['id']?>">
-              <input type="submit" value="delete">
-            </form>
     <?php }?>
-
-    <h2>
-      <?php
-        print_title();
-      ?>
-    </h2>
-    <?php
-        print_content();
-     ?>
+    <form action="update_process.php" method="post">
+      <input type="hidden" name="old_title" value="<?=$_GET['id']?>">
+      <p><input type="text" name="title" placeholder="Title" value="<?php print_title(); ?>"></p>
+      <p><textarea name="description" placeholder="Description"> <?php print_content();?></textarea></p>
+      <p><input type="submit"></p>
+    </form>
   </body>
 </html>

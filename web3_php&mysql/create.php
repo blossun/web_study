@@ -19,18 +19,14 @@ $article = array(
   'description'=>'Hello, web'
 );
 
-if(isset($_GET['id'])){ # id 값이 존재할 경우에만 본문내용을 가져오도록 한다.
-  $sql = "SELECT * FROM topic WHERE id={$_GET['id']}"; #id 값에 따라 데이터를 가져온다.
+if(isset($_GET['id'])){
+  $filtered_id = mysqli_real_escape_string($conn, $_GET['id']);
+  $sql = "SELECT * FROM topic WHERE id=$filtered_id";
   $result = mysqli_query($conn, $sql);
-  $row = mysqli_fetch_array($result); #하나의 행만 가져오고 있으므로 반복문 사용 없이 한번만 호출해주면 된다.
+  $row = mysqli_fetch_array($result);
   $article['title']=$row['title'];
   $article['description']=$row['description'];
-  // $article = array(
-  //   'title'=>$row['title'],
-  //   'description'=>$row['description']
-  // );
 }
-// print_r($article);
 ?>
 <!doctype html>
 <html>

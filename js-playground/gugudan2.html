@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gugudan2</title>
+</head>
+<body>
+    <h2>출력하실 구구단을 입력하세요.</h2>
+    <input type="text" id="myText">
+    <button onclick="gugudan7()"> 구구단 출력 </button>
+    <p id="result"></p>
+    <script>
+        // var x = Number(prompt(" 몇단을 출력 하실건가요? "));
+        
+        // document.write("<h2> 구구단 " + x + "단</h2>");
+        // gugudan6(x);
+        // function gugudan6(x){
+        //     for(var i=1;i<=9;i++){
+        //     console.log(x + ' * ' + i + ' = ' + x*i);
+        //     }
+        // }
+        function gugudan7(){
+            var x = document.getElementById("myText").value;
+            if(x<2 || x>9 ){
+                str = "2이상, 9이하의 값만 입력할 수 있습니다.";
+            }else{
+                var i = 1;
+                var str = '';
+                while(i<10){
+                    // document.write(x + ' * ' + i + ' = ' + x*i + '</br>');
+                    str += x + ' * ' + i + ' = ' + (x*i) + '</br>'
+                    console.log(x + ' * ' + i + ' = ' + x*i);
+                    i++;
+                }
+            }
+            document.getElementById("result").innerHTML = str;
+            
+        }
+    </script>
+</body>
+</html>

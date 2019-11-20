@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>print prime</title>
+</head>
+<body>
+    <script>
+        numbers = {};
+        numbers.all = [];
+        numbers.prime = [];
+        numbers.addAll = function(max_num){
+            for(var i=1; i<=max_num; i++){
+                numbers.all.push(i);
+            }
+        };
+        numbers.isPrime = function(number){
+            for(i=2; i<number; i++){
+                if(number%i==0){
+                    return false;
+                }
+            }
+            return true;
+        };
+
+        
+        // numbers.addPrime = function(number){
+        //     numbers.prime = number;
+        // };
+
+        
+        numbers.addPrime = function(){
+            for(var n in numbers.all){
+                if(this.isPrime(n)==true){
+                    this.prime.push(n);
+                }
+            }
+        };
+        numbers.addAll(10000);
+        numbers.addPrime();
+        console.log(numbers.prime);
+    </script>
+</body>
+</html>

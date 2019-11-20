@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>gugudan4</title>
+</head>
+<body>
+    <script>
+    
+    function calculate(num){
+        var results = [];
+        for(var i=1; i<=9; i++){
+            // results += num + " x " + i + " = ";
+            // results += num*i;
+            // results += "</br>";
+            results[i] = num * i;
+        }
+        return results;        
+    };
+
+    function print(i, results){
+        // document.write(results);
+        document.write("<h2>"+i+"단 </h2>");
+        for(var j=1; j<=9; j++){
+            document.write(i + " * " + j + " = " + results[j]+ "<br>");
+        }
+    }
+        
+    function main(){
+        for(var i=2; i<=9; i++){
+            res = calculate(i);
+            print(i, res);
+        }
+    }
+    main();
+        
+    </script>
+</body>
+</html>

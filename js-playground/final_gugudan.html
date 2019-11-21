@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>final gugudan</title>
+</head>
+<body>
+    <script>
+        var num = prompt("x, y 값을 입력해주세요").split(',');
+        var x = Number(num[0]);
+        var y = Number(num[1]);
+
+        // document.write(x,y);
+        for(var i=2; i<=x; i++){
+            document.write("<h2>"+i+"단 </h2>");
+            for(var j=1; j<=y; j++){
+                document.write(i + " * " + j + " = " + (i * j)+ "</br>");
+            }
+        }
+        
+    </script>
+</body>
+</html>

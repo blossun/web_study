@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>instance</title>
+</head>
+<body>
+    <script>
+        var Food = function(name, energy){
+            this.name = name;
+            this.energy = energy;
+            this.feed = function(human){
+                human.hp += this.energy;
+                console.log(human.name + "님이 " + this.name + "을 먹었습니다. + " + this.energy);
+            };
+        };
+
+        var Human = function(name, hp, power){
+            this.name = name;
+            this.hp = hp;
+            this.power = power;
+            this.attack = function(target){
+                target.hp -= this.power;
+                console.log(target.name +"님이 공격당했습니다. -" + this.power + " !! " );
+            };
+            this.show = function(){
+                console.log("이름 : %s , hp : %d, power : %d", this.name, this.hp, this.power);
+            };
+            this.eat = function(food){
+                this.hp += food.energy;
+                console.log(this.name + "님이 " + food.name +"을 먹었습니다. +" + food.energy);
+            };
+        };
+        
+        
+        var main = function(){
+            var p1 = new Human("nunnu", 100, 10);
+            var p2 = new Human("nanna", 80, 20);
+            p1.attack(p2);
+            p2.attack(p1);
+            p1.show();
+            p2.show();
+            var f1 = new Food("donut", 10);
+            var f2 = new Food("banana", 30);
+            p1.eat(f1);
+            p1.show();
+            f2.feed(p2);
+            p2.show();
+        };
+
+        main();
+    </script>
+</body>
+</html>

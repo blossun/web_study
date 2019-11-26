@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hoist</title>
+</head>
+<body>
+    <script>
+        console.log(a); //undefined : 변수는 있지만 값이 없다고 찍힌다.
+        var a = 10;
+        console.log(a);
+        console.log(b); //b라는 변수가 정의되지 않았다고 에러가 나온다.
+        const b = 20;
+        console.log(b);
+    </script>
+</body>
+</html>

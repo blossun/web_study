@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>puzzle</title>
+    <style>
+    p{
+        font-size: 20px;
+    }
+    #reverseBtn, #pushBtn, #contents{
+        font-size: 20px;
+        margin: 5px;
+    }
+    </style>
+    
+</head>
+<body>
+    <p id="example">HELLO</p>
+    <div id="contents"></div>
+    <input type="button" id="reverseBtn" onclick="reversing(ans)" value="뒤집기">
+    <input type="button" id="pushBtn" onclick="pushing(ans)" value="밀어내기">
+    <div id="result"></div>
+    <!-- script 실행 순서는 script 태그가 나올때 시작한다. head태그에 넣었다가 p태그에 hello 가 찍히기 전에 동작해서 오류 발생함. -->
+    <script src='puzzle02.js'></script> 
+
+</body>
+</html>

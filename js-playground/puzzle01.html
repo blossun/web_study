@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>puzzle</title>
+</head>
+<body>
+    <p id="example">HELLO</p>
+    <div id="contents"></div>
+    <input type="button" id="reverseBtn" onclick="reversing(ans)" value="뒤집기">
+    <input type="button" id="pushBtn" onclick="pushing(ans)" value="밀어내기">
+    <div id="result"></div>
+    <script>
+        var getStr = function(){
+            var str = document.getElementById('example').innerHTML.split('');
+            console.log(str);
+            return str;
+        };
+        var reversing = function(ans){
+            // console.log(ans);
+            var str= ans.reverse();
+            btnprint(str);
+            console.log(str);
+            checkAns();
+        };
+        var pushing = function(ans){
+            var left = ans.shift();
+            ans.push(left);
+            btnprint(ans);
+            checkAns();
+
+        }
+        var btnprint = function(ans){
+            var str = '';
+            for(var i=0; i<ans.length; i++){
+                str += "<input type=\"button\" id=\"btn"+i+"\" value=\""+ans[i]+"\">";
+            }
+            document.getElementById('contents').innerHTML=str;
+        }
+        function checkAns(){
+            if(quiz.toString() == ans.toString()){
+                document.getElementById('result').innerHTML = "일치합니다.";
+            }else{
+                document.getElementById('result').innerHTML = "일치하지 않습니다.";
+            }
+        }
+        function main(){
+            btnprint(quiz);
+            checkAns();
+           
+        }
+        quiz = getStr();
+        ans = getStr();
+        main();
+    </script>
+</body>
+</html>

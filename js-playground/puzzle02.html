@@ -9,7 +9,7 @@
     p{
         font-size: 20px;
     }
-    #reverseBtn, #pushBtn, #contents{
+    #reverseBtn, #pushBtn, #contents, #suffleBtn, #suffleBtn2{
         font-size: 20px;
         margin: 5px;
     }
@@ -17,9 +17,12 @@
     
 </head>
 <body>
+
+    <div id="score"></div>
     <p id="example"></p>
     <div id="contents"></div>
-    <input type="button" id="suffleBtn" onclick="game.suffle()" value="섞기">
+    <input type="button" id="suffleBtn" onclick="game.suffle()" value="무작위섞기">
+    <input type="button" id="suffleBtn2" onclick="game.suffle2()" value="섞기">
     <input type="button" id="reverseBtn" onclick="game.reversing(event)" value="뒤집기">
     <input type="button" id="pushBtn" onclick="game.lpushing(event)" value="<<왼쪽으로 밀어내기">
     <input type="button" id="pushBtn" onclick="game.rpushing(event)" value="오른쪽으로 밀어내기>>">
